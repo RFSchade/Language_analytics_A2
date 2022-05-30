@@ -175,11 +175,13 @@ def blob_plot(data, subset):
     ax1.bar(sum_df["GPE"], sum_df["polarity"], width, label = "Polarity")
     ax1.tick_params(axis='x', rotation=60)
     ax1.set_ylabel('Score', fontsize = 12)
+    ax1.legend()
 
     # Draw subplot 2
     ax2.bar(sum_df["GPE"], sum_df["subjectivity"], width, label = "Subjectivity")
     ax2.tick_params(axis='x', rotation=60)
     ax2.set_ylabel('Score', fontsize = 12)
+    ax2.legend()
 
     # Label x-axis
     plt.xlabel('GPEs', fontsize = 12)
@@ -187,7 +189,7 @@ def blob_plot(data, subset):
     plt.subplots_adjust(hspace=0.4)
 
     # Save figure
-    plt.savefig(os.path.join("output", f"{subset}blob_plot.png"), bbox_inches = "tight")
+    plt.savefig(os.path.join("output", f"{subset}_blob_plot.png"), bbox_inches = "tight")
 
 #=====> Define main()
 def main():
